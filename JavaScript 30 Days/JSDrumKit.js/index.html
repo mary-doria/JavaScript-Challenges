@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drum Kit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="soundkey">
+
+        <div data-key="65" class="soundkey">
+            <kbd>A</kbd>
+            <span class="sound">Luffy</span>
+        </div>
+
+        <div data-key="83" class="soundkey">
+            <kbd>S</kbd>
+            <span class="sound">Franky</span>
+        </div>
+
+        <div data-key="68" class="soundkey">
+            <kbd>D</kbd>
+            <span class="sound">Sanji</span>
+        </div>
+
+        <div data-key="70" class="soundkey">
+            <kbd>F</kbd>
+            <span class="sound">Zoro</span>
+        </div>
+
+        <div data-key="71" class="soundkey">
+            <kbd>G</kbd>
+            <span class="sound">Nami</span>
+        </div>
+
+    </div>
+
+    <audio data-key="65"src="sounds\one-piece-luffy.wav"></audio>
+    <audio data-key="83"src="sounds\one-piece-franky.wav"></audio>
+    <audio data-key="68"src="sounds\one-piece-sanji.wav"></audio>
+    <audio data-key="70"src="sounds\one-piece-zoro.wav"></audio>
+    <audio data-key="71"src="sounds\one-piece-nami.wav"></audio>
+
+<script>
+    window.addEventListener('keydown', function(e){
+        const audio = document.querySelector(`audio[data-key="${e.keycode}"]`)
+        if(!audio) return;
+        audio.play();
+
+    });
+
+</script>
+
+
+    
+</body>
+</html>
